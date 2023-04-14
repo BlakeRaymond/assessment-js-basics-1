@@ -51,8 +51,22 @@ const pinkPrice = .55
 
 // CODE HERE
 
+let totalAcres = 0
+// let acresLength = fujiAcres.length + galaAcres.length + pinkAcres.length
 
+console.log(totalAcres)
 
+// console.log(acresLength)
+
+//I figured I would set acresLength as the conditional in the for loop. 
+// I console logged "21" which is how many iterations I want as there are 21 days in three weeks.
+// I have tried this a million different ways... I keep getting NaN.So I figured out that wouldn't work.
+// Even when I put
+
+for (let i=0; i<fujiAcres.length && i<galaAcres.length && i<pinkAcres.length; i++){
+    totalAcres += fujiAcres[i] + galaAcres[i] + pinkAcres[i];
+}
+console.log(totalAcres)
 
 
 // PROBLEM 2
@@ -67,11 +81,24 @@ const pinkPrice = .55
     Log `averageDailyAcres` to the console.
 */
 
+
 // CODE HERE
 
+//Attempt #1:
 
+let averageDailyAcres = totalAcres/21
+console.log(averageDailyAcres)
 
+//NOTES : I knew this would work because I know how many array items we have... but what I don't know how many array items?
 
+//Attempt #2:
+
+let averageDailyAcresLength = fujiAcres.length + galaAcres.length + pinkAcres.length;
+averageDailyAcres = totalAcres/averageDailyAcresLength
+
+console.log(averageDailyAcres)
+
+//NOTES: Sweet, here's another way to do it. Couldn't find anything meaningful online so just sort of made it up and it worked!
 
 // PROBLEM 3
 
@@ -107,7 +134,33 @@ let days = 0
 
 // CODE HERE
 
+//NOTES: I'm not sure how to do this... 
 
+//Attempt #1:
+
+// while (acresLeft > 0){
+//     days = acresLeft - averageDailyAcres
+// }
+// console.log(days)
+
+//Attempt #2
+
+// while (acresLeft > 0){
+//         days -= acresLeft - averageDailyAcres
+
+//     }
+//     console.log(days)
+
+//NOTES : Added a (-) for "minus-equals", didn't work.
+
+//Attempt #3:
+
+while (acresLeft > 0){
+    days += acresLeft - averageDailyAcres
+}
+console.log(days)
+
+//NOTES : Added a (+) for "plus-equals", didn't work.
 
 // PROBLEM 4
 
